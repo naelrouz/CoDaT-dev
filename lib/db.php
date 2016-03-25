@@ -1,16 +1,16 @@
 <?php
 $host = 'localhost';
-$user = '';
-$password = 'testsite_vz';
-$database = 'testsite_vz';
+$user = 'taskman';
+$password = '123';
+$database = 'task_management';
 $con = mysqli_connect($host, $user, $password, $database);
 mysqli_set_charset($con, 'utf8');
 
 if(mysqli_errno($con)){
     echo 'Failed connect ' . mysqli_errno($con);
-}// else {echo 'oke';}
+}//else {echo 'oke';}
 //
-//
+
 //$query = "INSERT INTO news_category(name, description, sort_order) VALUES ('name4', 'desc4', 'sort4'),('name5', 'desc5', 'sort5')";
 //$query = "DELETE FROM news_category WHERE id=11";
 //$sql = "DELETE FROM news WHERE date > DATE_SUB(CURDATE(), INTERVAL 1 HOUR)";
@@ -22,14 +22,18 @@ if(mysqli_errno($con)){
 //$sql = "SELECT MAX(id) AS count FROM news";
 //$sql = "SELECT SUM(id) AS sum FROM news";
 //$sql = "SELECT *, COUNT(*) AS count FROM news GROUP BY short_content";
+$sql = "SELECT * FROM incoming";
 $result = mysqli_query($con,$sql);
 $count = mysqli_num_rows($result); // узнать количество полученных строк
-//
-//
+////
+////
+?>
 if($count){
     while ($row = mysqli_fetch_array($result)) {
-        echo $row['h1'].'-';
-        echo $row['count'].'<br>';
+        echo $row['id'];
+        echo $row['id'];
+        echo $row['id'];
+        //echo $row['count'].'<br>';
         //echo $row['sum'];
     }
 }
