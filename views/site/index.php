@@ -2,12 +2,12 @@
 
 /* @var $this yii\web\View */
 
-use yii\grid\GridView;
+//use yii\grid\GridView;
 $this->title = 'Контроль поручений';
 
 ?>
 
-<div class="x-table_gf">
+<div class="table_gf">
 <table class="table table-bordered">
     <tr>
             <th>Статус</th>
@@ -23,8 +23,8 @@ $this->title = 'Контроль поручений';
             <th colspan="5">Поручения</th>
             </tr>
 <?php foreach ($incoming as $incoming) { ?>
-    <tr class="table-hover">
-        <td><b><a href="<?= Yii::$app->urlManager->createUrl(['site/user', 'name'=>$incoming->id])?>"><?=$incoming->id?></a></b></td>
+    <tr class="">
+        <td><b><a href="<?= Yii::$app->urlManager->createUrl(['site/user', 'id'=>$incoming->id])?>"><?=$incoming->id?></a></b></td>
         <td><?=$incoming->type?></td>
         <td><?=$incoming->incoming_number?></td>
         <td><?=$incoming->incoming_date?></td>
@@ -34,8 +34,8 @@ $this->title = 'Контроль поручений';
         <td><?=$incoming->sender?></td>
         <td><?=$incoming->addresser?></td>
         <td>
-            <b><a href="<?= Yii::$app->urlManager->createUrl(['site/user', 'name'=>$incoming->id])?>">Изменить</a></b>
-            <b><a href="<?= Yii::$app->urlManager->createUrl(['site/user', 'name'=>$incoming->id])?>">+Поручение</a></b>
+            <b><a href="<?= Yii::$app->urlManager->createUrl(['site/docedit', 'id'=>$incoming->id])?>">Изменить</a></b>
+            <b><a href="<?= Yii::$app->urlManager->createUrl(['site/docremove', 'id'=>$incoming->id])?>">+Поручение</a></b>
         </td>
         <td>
             <table class="table x-table-bordered">
@@ -69,22 +69,3 @@ $this->title = 'Контроль поручений';
     
 </table>
 </div>
-
-<?php
-echo GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
- 
-            'id',
-            'type:ntext',
-//            'name:ntext',
-//            'url:ntext',
-//            'category_image:ntext',
-            // 'created_at',
-            // 'updated_at',
- 
-            //['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); 
-?>

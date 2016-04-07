@@ -98,4 +98,5 @@ a.desc:after {
     position: absolute;
     top: 60px;
     left: 0px;
+    margin: 0px 10px 0px;
 }

@@ -37,17 +37,18 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => '+ Документ', 'url' => ['/site/docform']],
+            ['label' => 'DocEdit', 'url' => ['/site/docedit']],
             ['label' => '+ Поручение', 'url' => ['/site/taskform']],
             ['label' => 'Общий вид', 'url' => ['/site/index']],
             ['label' => 'Общий вид 2', 'url' => ['/site/list']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            //['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => 'Вход', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Выход (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm()
