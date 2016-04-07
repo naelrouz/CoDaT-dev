@@ -6,7 +6,7 @@ use yii\grid\GridView;
 $this->title = 'Контроль поручений';
 
 ?>
-
+<div class="table_gf">
 <?php
 echo GridView::widget([
         'dataProvider' => $dataProvider,
@@ -73,3 +73,4 @@ echo GridView::widget([
         ],
     ]); 
 ?>
+</div>

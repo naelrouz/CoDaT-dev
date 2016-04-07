@@ -27,8 +27,7 @@ class DocumentForm extends Model{
     public function rules()
     {
         return [ 
-            [
-                [   // Перечень полей. Все поля должны быть заполнены.
+            [[   // Перечень полей. Все поля должны быть заполнены.
                 'type',
                 'incoming_number',
                 'incoming_date',
@@ -40,6 +39,15 @@ class DocumentForm extends Model{
                 ], 'required','message'=>'Все поля должны быть заполнены'],
             // email has to be a valid email address
             //['email', 'email'],
+            [['type',
+                'incoming_number',
+                'incoming_date',
+                'outgoing_date',
+                'outgoing_number',
+                'description',
+                'sender',
+                'addresser'], 'trim'],
+
             
         ];
     }
